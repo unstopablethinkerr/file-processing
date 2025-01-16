@@ -1,6 +1,8 @@
 // Function to fetch and process a text file
 async function processTextFile(url) {
   try {
+    console.log('Fetching text file from:', url);
+
     // Fetch the text file
     const response = await fetch(url);
 
@@ -11,6 +13,7 @@ async function processTextFile(url) {
 
     // Get the text content from the response
     const text = await response.text();
+    console.log('Text file content:', text);
 
     // Display the text content on the HTML page
     document.getElementById('content').innerText = text;
@@ -45,7 +48,7 @@ async function processTextFile(url) {
 
 // URL of the text file to process
 // Replace 'your-username' and 'your-repo' with your actual GitHub username and repository name
-const textFileUrl = 'https://unstopablethinkerr.github.io/file-processing/textfile.txt';
+const textFileUrl = 'https://your-username.github.io/your-repo/textfile.txt';
 
 // Call the function to process the text file
 processTextFile(textFileUrl);
