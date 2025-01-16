@@ -1,4 +1,4 @@
- // Function to fetch and process a text file
+// Function to fetch and process a text file
 async function processTextFile(url) {
   try {
     // Fetch the text file
@@ -12,14 +12,13 @@ async function processTextFile(url) {
     // Get the text content from the response
     const text = await response.text();
 
-    // Process the text content
-    console.log('Text file content:');
-    console.log(text);
+    // Display the text content on the HTML page
+    document.getElementById('content').innerText = text;
 
     // Example processing: Count the number of words
     const words = text.split(/\s+/);
     const wordCount = words.length;
-    console.log(`Number of words: ${wordCount}`);
+    document.getElementById('word-count').innerText = `Number of words: ${wordCount}`;
 
     // Example processing: Find the most frequent word
     const wordFrequency = words.reduce((freq, word) => {
@@ -36,16 +35,17 @@ async function processTextFile(url) {
         maxFrequency = wordFrequency[word];
       }
     }
-    console.log(`Most frequent word: "${mostFrequentWord}" with ${maxFrequency} occurrences`);
+    document.getElementById('most-frequent-word').innerText = `Most frequent word: "${mostFrequentWord}" with ${maxFrequency} occurrences`;
 
   } catch (error) {
     console.error('Error processing text file:', error);
+    document.getElementById('content').innerText = 'Error loading text file.';
   }
 }
 
 // URL of the text file to process
 // Replace 'your-username' and 'your-repo' with your actual GitHub username and repository name
-const textFileUrl = 'https://unstopablethinkerr.github.io/file-processing/textfile.txt';
+const textFileUrl = 'https://your-username.github.io/your-repo/textfile.txt';
 
 // Call the function to process the text file
 processTextFile(textFileUrl);
