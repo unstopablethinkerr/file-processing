@@ -45,7 +45,7 @@ async function processTextFile(url) {
 
 // URL of the text file to process
 // Replace 'your-username' and 'your-repo' with your actual GitHub username and repository name
-const textFileUrl = 'https://your-username.github.io/your-repo/textfile.txt';
+const textFileUrl = 'https://unstopablethinkerr.github.io/file-processing/textfile.txt';
 
 // Call the function to process the text file
 processTextFile(textFileUrl);
